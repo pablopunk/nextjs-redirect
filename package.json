@@ -1,0 +1,66 @@
+{
+  "name": "nextjs-redirect",
+  "description": "Redirect to any URL in NextJS both in client and server",
+  "version": "1.0.0",
+  "author": "Pablo Varela <pablovarela182@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/pablopunk/nextjs-redirect/issues",
+    "email": "pablovarela182@gmail.com"
+  },
+  "contributors": [
+    "Pablo Varela <pablovarela182@gmail.com>"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.23.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "husky": "*",
+    "prettier": "*",
+    "pretty-quick": "*"
+  },
+  "homepage": "https://github.com/pablopunk/nextjs-redirect",
+  "keywords": [
+    "nextjs",
+    "redirect",
+    "zeit",
+    "react",
+    "component",
+    "automatic",
+    "simple",
+    "url",
+    "302"
+  ],
+  "license": "MIT",
+  "main": "dist.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablopunk/nextjs-redirect"
+  },
+  "scripts": {
+    "build": "babel index.js > dist.js",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "dist.js"
+  ],
+  "babel": {
+    "presets": [
+      "latest",
+      "react"
+    ],
+    "plugins": ["transform-runtime"]
+  }
+}
