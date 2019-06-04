@@ -51,7 +51,7 @@
   },
   "scripts": {
     "build": "babel index.js > dist.js",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "files": [
     "dist.js"
