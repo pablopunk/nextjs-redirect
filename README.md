@@ -22,8 +22,7 @@ npm install nextjs-redirect
 ```js
 // pages/whatever.js
 import redirect from 'nextjs-redirect'
-const RedirectComponent = redirect('https://www.google.com') // site to redirect
-export default RedirectComponent
+export default redirect('https://www.google.com') // site to redirect
 ```
 
 
