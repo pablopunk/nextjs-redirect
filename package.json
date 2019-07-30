@@ -12,14 +12,10 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-core": "^6.23.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
     "husky": "*",
     "prettier": "*",
-    "pretty-quick": "*"
+    "pretty-quick": "*",
+    "sucrase": "^3.10.1"
   },
   "homepage": "https://github.com/pablopunk/nextjs-redirect",
   "keywords": [
@@ -34,7 +30,7 @@
     "302"
   ],
   "license": "MIT",
-  "main": "dist.js",
+  "main": "dist/index.js",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
@@ -50,19 +46,10 @@
     "url": "https://github.com/pablopunk/nextjs-redirect"
   },
   "scripts": {
-    "build": "babel index.js > dist.js",
+    "build": "sucrase src -d dist --transforms imports",
     "prepare": "npm run build"
   },
   "files": [
-    "dist.js"
-  ],
-  "babel": {
-    "presets": [
-      "latest",
-      "react"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ]
-  }
+    "dist/index.js"
+  ]
 }
