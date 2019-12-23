@@ -11,6 +11,10 @@
     "Pablo Varela <pablovarela182@gmail.com>"
   ],
   "dependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "nextjs": "*"
+  },
   "devDependencies": {
     "husky": "*",
     "prettier": "*",
@@ -31,6 +35,7 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
+  "types": "./typings.d.ts",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
@@ -46,7 +51,7 @@
     "url": "https://github.com/pablopunk/nextjs-redirect"
   },
   "scripts": {
-    "build": "sucrase src -d dist --transforms imports",
+    "build": "sucrase src -d dist --transforms imports,typescript",
     "prepare": "npm run build"
   },
   "files": [
