@@ -1,7 +1,7 @@
 {
   "name": "nextjs-redirect",
   "description": "Redirect to any URL in NextJS both in client and server",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "Pablo Varela <pablovarela182@gmail.com>",
   "bugs": {
     "url": "https://github.com/pablopunk/nextjs-redirect/issues",
