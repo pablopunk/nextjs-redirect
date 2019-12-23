@@ -13,7 +13,7 @@
   "dependencies": {},
   "peerDependencies": {
     "react": "*",
-    "nextjs": "*"
+    "next": "*"
   },
   "devDependencies": {
     "husky": "*",
