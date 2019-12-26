@@ -18,10 +18,10 @@ npm install nextjs-redirect
 
 ## Usage
 
-Let's say you want to create a page `/fund-me` that redirects the user to paypal.me with a default value for the money. You create the page as you always do in NextJS (`pages/fund-me.js`) and then just use this component with the URL you want:
+Let's say you want to create a page `/donate` that redirects the user to paypal.me with a default value for the money. You create the page as you always do in NextJS (`pages/donate.js`) and then just use this component with the URL you want:
 
 ```js
-// pages/fund-me.js
+// pages/donate.js
 import redirect from 'nextjs-redirect'
 export default redirect('https://paypal.me/pablopunk/5')
 ```
