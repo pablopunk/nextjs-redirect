@@ -5,7 +5,7 @@ export default (redirectUrl: string) =>
   class extends React.Component {
     static async getInitialProps({ res }) {
       if (res) {
-        res.writeHead(302, { Location: redirectUrl })
+        res.writeHead(301, { Location: redirectUrl })
         res.end()
       } else {
         Router.push(redirectUrl)
