@@ -28,9 +28,9 @@ export default redirect('https://paypal.me/pablopunk/5')
 
 You can checkout this example live in [pablo.pink](https://pablo.pink)
 
-### 301 or 302
+### Status code (301, 302...)
 
-By default, it will send a [301 status code](https://github.com/pablopunk/nextjs-redirect/pull/1#issue-399899123). This can be customized by an optional parameter:
+By default, it will send a [301 status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection). This can be customized by an optional parameter:
 
 ```js
 redirect('https://google.es', 302)
