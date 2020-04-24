@@ -36,8 +36,6 @@
     "302"
   ],
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "./typings.d.ts",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
@@ -56,6 +54,8 @@
     "build": "sucrase src -d dist --transforms imports,typescript",
     "prepare": "npm run build"
   },
+  "main": "./dist/index.js",
+  "types": "./typings.d.ts",
   "files": [
     "dist/index.js",
     "typings.d.ts"
