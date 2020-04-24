@@ -38,7 +38,7 @@ redirect('https://google.es', 302)
 
 ## Related
 
-Working with locales routes? Take a look at [nextjs-redirect-locales](https://github.com/pablopunk/nextjs-redirect-locales).
+Working with locales routes? Take a look at [nextjs-redirect-locale](https://github.com/pablopunk/nextjs-redirect-locale).
 
 ## License
 
