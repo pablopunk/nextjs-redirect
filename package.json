@@ -17,8 +17,10 @@
   },
   "devDependencies": {
     "husky": "*",
+    "next": "*",
     "prettier": "*",
     "pretty-quick": "*",
+    "react": "*",
     "sucrase": "^3.10.1"
   },
   "homepage": "https://github.com/pablopunk/nextjs-redirect",
