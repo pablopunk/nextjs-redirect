@@ -12,10 +12,11 @@
   ],
   "dependencies": {},
   "peerDependencies": {
-    "react": "*",
-    "next": "*"
+    "next": "*",
+    "react": "*"
   },
   "devDependencies": {
+    "dts-bundle-generator": "^4.3.0",
     "husky": "*",
     "next": "*",
     "prettier": "*",
@@ -51,7 +52,7 @@
     "url": "https://github.com/pablopunk/nextjs-redirect"
   },
   "scripts": {
-    "build": "sucrase src -d dist --transforms imports,typescript",
+    "build": "sucrase src -d dist --transforms imports,typescript && dts-bundle-generator -o typings.d.ts src/index.tsx",
     "prepare": "npm run build"
   },
   "main": "./dist/index.js",

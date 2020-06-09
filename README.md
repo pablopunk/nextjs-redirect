@@ -33,7 +33,21 @@ You can checkout this example live in [pablo.pink](https://pablo.pink)
 By default, it will send a [301 status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection). This can be customized by an optional parameter:
 
 ```js
-redirect('https://google.es', 302)
+redirect('https://google.es', { statusCode: 302 })
+```
+
+### Client side dynamic routes (`as`)
+
+When redirecting on the client side, if the redirected page is dynamic (`pages/user/[userId]/info.js`), the following redirect will trigger a page refresh:
+
+```js
+redirect('/user/42/info')
+```
+
+In this case you can use the `asUrl` option to make a smooth transition between pages without any refresh:
+
+```js
+redirect('/user/[userId]/info', { asUrl: '/user/42/info' })
 ```
 
 ## Related
