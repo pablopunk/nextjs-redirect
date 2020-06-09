@@ -3,7 +3,7 @@ import Router from 'next/router'
 
 export default (
   redirectUrl: string,
-  options?: { asUrl: string; statusCode: number }
+  options?: { asUrl?: string; statusCode?: number }
 ) =>
   class extends React.Component {
     static async getInitialProps({ res }) {

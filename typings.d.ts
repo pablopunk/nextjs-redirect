@@ -3,8 +3,8 @@
 declare const _default: (
   redirectUrl: string,
   options?: {
-    asUrl: string
-    statusCode: number
+    asUrl?: string
+    statusCode?: number
   }
 ) => {
   new (): {
