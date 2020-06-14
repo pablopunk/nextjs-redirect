@@ -50,6 +50,10 @@ In this case you can use the `asUrl` option to make a smooth transition between 
 redirect('/user/[userId]/info', { asUrl: '/user/42/info' })
 ```
 
+### Static export
+
+This package is compatible with `next export` since version 4.0.0. See [PR #4](https://github.com/pablopunk/nextjs-redirect/pull/4) for more details.
+
 ## Related
 
 Working with locales routes? Take a look at [nextjs-redirect-locale](https://github.com/pablopunk/nextjs-redirect-locale).
