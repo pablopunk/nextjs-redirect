@@ -41,7 +41,6 @@ export default (
               options?.statusCode === 301) && (
               <link rel="canonical" href={href} />
             )}
-            <meta />
           </Head>
           {/* Provides a redirect link if no meta refresh support */}
           <p>
