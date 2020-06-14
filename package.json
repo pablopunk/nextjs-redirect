@@ -16,13 +16,15 @@
     "react": "*"
   },
   "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.36",
     "dts-bundle-generator": "^4.3.0",
     "husky": "*",
     "next": "*",
     "prettier": "*",
     "pretty-quick": "*",
     "react": "*",
-    "sucrase": "^3.10.1"
+    "sucrase": "*"
   },
   "homepage": "https://github.com/pablopunk/nextjs-redirect",
   "keywords": [

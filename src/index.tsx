@@ -29,22 +29,20 @@ export default (
 
     render() {
       const href = options?.asUrl ?? redirectUrl
+
       return (
         <>
-          <Head
-            children={
-              <>
-                {/* Redirects with meta refresh if no JavaScript support */}
-                <noscript>
-                  <meta httpEquiv="refresh" content={`0;url=${href}`} />
-                </noscript>
-                {(options?.statusCode === undefined ||
-                  options?.statusCode === 301) && (
-                  <link rel="canonical" href={href} />
-                )}
-              </>
-            }
-          />
+          <Head>
+            {/* Redirects with meta refresh if no JavaScript support */}
+            <noscript>
+              <meta httpEquiv="refresh" content={`0;url=${href}`} />
+            </noscript>
+            {(options?.statusCode === undefined ||
+              options?.statusCode === 301) && (
+              <link rel="canonical" href={href} />
+            )}
+            <meta />
+          </Head>
           {/* Provides a redirect link if no meta refresh support */}
           <p>
             Redirecting to <a href={href}>{href}</a>&hellip;
