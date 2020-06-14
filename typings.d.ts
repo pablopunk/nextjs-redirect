@@ -8,6 +8,7 @@ declare const _default: (
   }
 ) => {
   new (): {
+    componentDidMount(): void
     render(): any
   }
   getInitialProps({ res }: { res: any }): Promise<{}>
