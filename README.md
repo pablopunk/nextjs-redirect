@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/pablopunk/miny"><img src="https://img.shields.io/badge/made_with-miny-1eced8.svg" /> </a>
-  <a href="https://www.npmjs.com/package/nextjs-redirect"><img src="https://img.shields.io/npm/dt/nextjs-redirect.svg?color=6c5ce7" /></a>
+  <a href="https://www.npmjs.com/package/nextjs-redirect"><img src="https://img.shields.io/npm/dm/nextjs-redirect.svg?color=6c5ce7" /></a>
   <a href="https://packagephobia.now.sh/result?p=nextjs-redirect"><img src="https://packagephobia.now.sh/badge?p=nextjs-redirect"/></a>
 </p>
 
