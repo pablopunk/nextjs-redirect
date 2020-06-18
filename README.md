@@ -1,9 +1,9 @@
 # nextjs-redirect
 
 <p align="center">
-  <a href="https://github.com/pablopunk/miny"><img src="https://img.shields.io/badge/made_with-miny-1eced8.svg" /> </a>
-  <a href="https://www.npmjs.com/package/nextjs-redirect"><img src="https://img.shields.io/npm/dm/nextjs-redirect.svg?color=6c5ce7" /></a>
-  <a href="https://packagephobia.now.sh/result?p=nextjs-redirect"><img src="https://packagephobia.now.sh/badge?p=nextjs-redirect"/></a>
+  <a href="https://github.com/pablopunk/miny"><img src="https://img.shields.io/badge/made_with-miny-1eced8.svg" style="display:inline" /> </a>
+  <a href="https://www.npmjs.com/package/nextjs-redirect"><img src="https://img.shields.io/npm/dm/nextjs-redirect.svg?color=6c5ce7" style="display:inline" /></a>
+  <a href="https://packagephobia.now.sh/result?p=nextjs-redirect"><img src="https://packagephobia.now.sh/badge?p=nextjs-redirect" style="display:inline" /></a>
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@ By default, it will send a [301 status code](https://en.wikipedia.org/wiki/List_
 redirect('https://google.es', { statusCode: 302 })
 ```
 
-### Client side dynamic routes (`as`)
+### Client side dynamic routes (as)
 
 When redirecting on the client side, if the redirected page is dynamic (`pages/user/[userId]/info.js`), the following redirect will trigger a page refresh:
 
