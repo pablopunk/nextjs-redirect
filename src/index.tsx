@@ -42,10 +42,14 @@ export default (
               <link rel="canonical" href={href} />
             )}
           </Head>
-          {/* Provides a redirect link if no meta refresh support */}
-          <p>
-            Redirecting to <a href={href}>{href}</a>&hellip;
-          </p>
+          {/* Provides a redirect link if no meta refresh support; or children if provided */}
+          {this.props.children ? (
+            this.props.children
+          ) : (
+            <p>
+              Redirecting to <a href={href}>{href}</a>&hellip;
+            </p>
+          )}
         </>
       )
     }

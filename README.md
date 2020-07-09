@@ -54,6 +54,22 @@ redirect('/user/[userId]/info', { asUrl: '/user/42/info' })
 
 This package is compatible with `next export` since version 4.0.0. See [PR #4](https://github.com/pablopunk/nextjs-redirect/pull/4) for more details.
 
+### Custom UI component (HOC)
+
+In case the navigation is happening client-side, you can use this package as a HOC to provide your custom components/styles for the UI:
+
+```jsx
+import redirect from 'nextjs-redirect'
+
+const Redirect = redirect('https://github.com/pablopunk')
+
+export default () => (
+  <Redirect>
+    <MyLayout>Redirecting to github!</MyLayout>
+  </Redirect>
+)
+```
+
 ## Related
 
 Working with locales routes? Take a look at [nextjs-redirect-locale](https://github.com/pablopunk/nextjs-redirect-locale).
