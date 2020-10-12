@@ -2,13 +2,13 @@
   "name": "nextjs-redirect",
   "description": "Redirect to any URL in NextJS both in client and server",
   "version": "5.0.0",
-  "author": "Pablo Varela <pablo.com>",
+  "author": "Pablo Varela <pablo@pablopunk.com>",
   "bugs": {
     "url": "https://github.com/pablopunk/nextjs-redirect/issues",
-    "email": "pablo.com"
+    "email": "pablo@pablopunk.com"
   },
   "contributors": [
-    "Pablo Varela <pablo.com>"
+    "Pablo Varela <pablo@pablopunk.com>"
   ],
   "dependencies": {},
   "peerDependencies": {
