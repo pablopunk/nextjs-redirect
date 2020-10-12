@@ -22,18 +22,18 @@ Let's say you want to create a page `/donate` that redirects the user to paypal.
 
 ```js
 // pages/donate.js
-import redirect from "nextjs-redirect";
-export default redirect("https://paypal.me/pablopunk/5");
+import redirect from 'nextjs-redirect'
+export default redirect('https://paypal.me/pablopunk/5')
 ```
 
-You can checkout this example live in [pablo.im](https://pablo.im)
+You can checkout this example live in [pablopunk.com](https://pablopunk.com)
 
 ### Status code (301, 302...)
 
 By default, it will send a [301 status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#3xx_Redirection). This can be customized by an optional parameter:
 
 ```js
-redirect("https://google.es", { statusCode: 302 });
+redirect('https://google.es', { statusCode: 302 })
 ```
 
 ### Client side dynamic routes (as)
@@ -41,13 +41,13 @@ redirect("https://google.es", { statusCode: 302 });
 When redirecting on the client side, if the redirected page is dynamic (`pages/user/[userId]/info.js`), the following redirect will trigger a page refresh:
 
 ```js
-redirect("/user/42/info");
+redirect('/user/42/info')
 ```
 
 In this case you can use the `asUrl` option to make a smooth transition between pages without any refresh:
 
 ```js
-redirect("/user/[userId]/info", { asUrl: "/user/42/info" });
+redirect('/user/[userId]/info', { asUrl: '/user/42/info' })
 ```
 
 ### Static export
@@ -59,15 +59,15 @@ This package is compatible with `next export` since version 4.0.0. See [PR #4](h
 In case the navigation is happening client-side, you can use this package as a HOC to provide your custom components/styles for the UI:
 
 ```jsx
-import redirect from "nextjs-redirect";
+import redirect from 'nextjs-redirect'
 
-const Redirect = redirect("https://github.com/pablopunk");
+const Redirect = redirect('https://github.com/pablopunk')
 
 export default () => (
   <Redirect>
     <MyLayout>Redirecting to github!</MyLayout>
   </Redirect>
-);
+)
 ```
 
 ## Related
@@ -86,4 +86,4 @@ MIT
 
 | ![me](https://gravatar.com/avatar/fa50aeff0ddd6e63273a068b04353d9d?size=100) |
 | ---------------------------------------------------------------------------- |
-| [Pablo Varela](https://pablo.im)                                             |
+| [Pablo Varela](https://pablopunk.com)                                        |
