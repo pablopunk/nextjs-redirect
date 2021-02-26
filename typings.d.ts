@@ -10,7 +10,7 @@ declare const _default: (
     statusCode?: number
   }
 ) => {
-  new (props: Readonly<{}>): {
+  new (props: {} | Readonly<{}>): {
     componentDidMount(): void
     render(): JSX.Element
     context: any
@@ -64,7 +64,7 @@ declare const _default: (
       nextContext: any
     ): void
   }
-  new (props: {}, context?: any): {
+  new (props: {}, context: any): {
     componentDidMount(): void
     render(): JSX.Element
     context: any
