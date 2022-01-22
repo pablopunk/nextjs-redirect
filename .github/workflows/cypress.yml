@@ -6,7 +6,11 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cypress run
-        run: npm run test:ci
+      - name: checkout
+        uses: actions/checkout@v1
+
+      - name: npm install
+        uses: bahmutov/npm-install@v1
+
+      - name: Run tests 🧪
+        run: npm test:ci
