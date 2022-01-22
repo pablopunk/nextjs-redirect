@@ -8,6 +8,7 @@ declare const _default: (
   options?: {
     asUrl?: string
     statusCode?: number
+    params?: boolean
   }
 ) => {
   new (props: {} | Readonly<{}>): {
@@ -118,7 +119,7 @@ declare const _default: (
       nextContext: any
     ): void
   }
-  getInitialProps({ res }: { res: any }): Promise<{}>
+  getInitialProps({ res, query }: { res: any; query: any }): Promise<{}>
   contextType?: React.Context<any>
 }
 export default _default

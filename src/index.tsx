@@ -4,13 +4,24 @@ import Head from 'next/head'
 
 export default (
   redirectUrl: string,
-  options?: { asUrl?: string; statusCode?: number }
+  options?: { asUrl?: string; statusCode?: number; params?: boolean }
 ) =>
   class extends React.Component {
     // Redirects on the server side first if possible
-    static async getInitialProps({ res }) {
+    static async getInitialProps({ res, query }) {
       if (res?.writeHead) {
-        res.writeHead(options?.statusCode ?? 301, { Location: redirectUrl })
+        let url = redirectUrl
+
+        if (options?.params === true) {
+          const param = redirectUrl
+          if (!query[param]) {
+            throw new Error(
+              "Option {params: true} require the url to be the name of the param to search for: `redirect('to', {params:true})` will work with `/redirect?to=https://example.com`"
+            )
+          }
+          url = query[param]
+        }
+        res.writeHead(options?.statusCode ?? 301, { Location: url })
         res.end()
       }
       return {}
@@ -54,3 +65,5 @@ export default (
       )
     }
   }
+
+const getParamFromURL = (url: string, param: string) => {}

@@ -70,6 +70,23 @@ export default () => (
 )
 ```
 
+### Redirect to URL from parameters
+
+Let's say you have a single page called `/redirect`, and you wanna use it for all kinds of redirects:
+
+* `/redirect?to=https://google.com`
+* `/redirect?next=https://twitter.com`
+* `/redirect?url=https://pablopunk.com`
+
+Pretty cool huh!? You can do this with `nextjs-redirect` by passing the name of the parameter you want on the url. For the examples above:
+
+```ts
+// NOTE: These are 3 separate examples, you can only choose one name per page
+redirect('to', {params: true})
+redirect('next', {params: true})
+redirect('url', {params: true})
+```
+
 ## Related
 
 Working with locales routes? Take a look at [nextjs-redirect-locale](https://github.com/pablopunk/nextjs-redirect-locale).

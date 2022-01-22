@@ -10,7 +10,6 @@
   "contributors": [
     "Pablo Varela <pablo@pablopunk.com>"
   ],
-  "dependencies": {},
   "peerDependencies": {
     "next": "*",
     "react": "*"
@@ -18,12 +17,14 @@
   "devDependencies": {
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
+    "cypress": "^9.3.1",
     "dts-bundle-generator": "^4.3.0",
     "husky": "*",
     "next": "*",
     "prettier": "*",
     "pretty-quick": "*",
     "react": "*",
+    "start-server-and-test": "^1.14.0",
     "sucrase": "*"
   },
   "homepage": "https://github.com/pablopunk/nextjs-redirect",
@@ -58,7 +59,12 @@
     "build": "sucrase src -d dist --transforms imports,typescript,jsx && npm run generate-types && npm run prettier",
     "generate-types": "dts-bundle-generator -o typings.d.ts src/index.tsx",
     "prettier": "prettier src/*.tsx ./typings.d.ts --write",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "cypress": "cypress open",
+    "cypress:ci": "cypress run",
+    "start-test-server": "cd test && npm start",
+    "test": "start-server-and-test start-test-server http://localhost:3000 cypress",
+    "test:ci": "start-server-and-test start-test-server http://localhost:3000 cypress:ci"
   },
   "main": "./dist/index.js",
   "types": "./typings.d.ts",
