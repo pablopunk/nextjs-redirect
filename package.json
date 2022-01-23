@@ -62,7 +62,7 @@
     "prepare": "npm run build",
     "cypress": "cypress open",
     "cypress:ci": "cypress run",
-    "start-test-server": "npm run build && cd test && npm start",
+    "start-test-server": "npm run build && cd cypress/test-server && npm start",
     "test": "start-server-and-test start-test-server http://localhost:3000 cypress",
     "test:ci": "start-server-and-test start-test-server http://localhost:3000 cypress:ci"
   },
