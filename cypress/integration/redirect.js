@@ -20,13 +20,9 @@ describe('nextjs-redirect', () => {
     })
   })
   it('redirects to dynamic custom url', () => {
-    const urlRedirects = []
-
     cy.on('url:changed', (url) => urlRedirects.push(url))
-    cy.visit('/redirect?to=https://pablopunk.com')
-    cy.then(() => {
-      expect(urlRedirects).to.have.length(1)
-      expect(urlRedirects[0]).to.include('pablopunk.com')
+    cy.request('/redirect?to=https://pablopunk.com').then((response) => {
+      expect(response.redirects[0]).to.include('https://pablopunk.com')
     })
   })
 })
