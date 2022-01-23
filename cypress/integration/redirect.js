@@ -14,15 +14,15 @@ describe('nextjs-redirect', () => {
       expect(response.redirects[0]).to.include('301:')
     })
   })
-  it('redirects with custom status', () => {
-    cy.request('/google-302').then((response) => {
-      expect(response.redirects[0]).to.include('302:')
-    })
-  })
   it('redirects to dynamic custom url', () => {
     cy.on('url:changed', (url) => urlRedirects.push(url))
     cy.request('/redirect?to=https://pablopunk.com').then((response) => {
       expect(response.redirects[0]).to.include('https://pablopunk.com')
+    })
+  })
+  it('redirects with custom status', () => {
+    cy.request('/google-302').then((response) => {
+      expect(response.redirects[0]).to.include('302:')
     })
   })
 })
