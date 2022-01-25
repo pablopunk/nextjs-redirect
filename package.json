@@ -25,7 +25,7 @@
     "pretty-quick": "*",
     "react": "*",
     "start-server-and-test": "^1.14.0",
-    "sucrase": "*"
+    "sucrase": "^3.20.3"
   },
   "homepage": "https://github.com/pablopunk/nextjs-redirect",
   "keywords": [
@@ -56,9 +56,8 @@
     "url": "https://github.com/pablopunk/nextjs-redirect"
   },
   "scripts": {
-    "build": "sucrase src -d dist --transforms imports,typescript,jsx && npm run generate-types && npm run prettier",
+    "build": "sucrase src -d dist --transforms imports,typescript,jsx && npm run generate-types",
     "generate-types": "dts-bundle-generator -o typings.d.ts src/index.tsx",
-    "prettier": "prettier src/*.tsx ./typings.d.ts --write",
     "prepare": "npm run build",
     "cypress": "cypress open",
     "cypress:ci": "cypress run",

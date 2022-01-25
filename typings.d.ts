@@ -3,125 +3,67 @@
 /// <reference types="prop-types" />
 /// <reference types="react" />
 
-declare const _default: (
-  redirectUrl: string,
-  options?: {
-    asUrl?: string
-    statusCode?: number
-    params?: boolean
-  }
-) => {
-  new (props: {} | Readonly<{}>): {
-    componentDidMount(): void
-    render(): JSX.Element
-    context: any
-    setState<K extends never>(
-      state:
-        | {}
-        | ((prevState: Readonly<{}>, props: Readonly<{}>) => {} | Pick<{}, K>)
-        | Pick<{}, K>,
-      callback?: () => void
-    ): void
-    forceUpdate(callback?: () => void): void
-    readonly props: Readonly<{}> &
-      Readonly<{
-        children?: React.ReactNode
-      }>
-    state: Readonly<{}>
-    refs: {
-      [key: string]: React.ReactInstance
-    }
-    shouldComponentUpdate?(
-      nextProps: Readonly<{}>,
-      nextState: Readonly<{}>,
-      nextContext: any
-    ): boolean
-    componentWillUnmount?(): void
-    componentDidCatch?(error: Error, errorInfo: React.ErrorInfo): void
-    getSnapshotBeforeUpdate?(
-      prevProps: Readonly<{}>,
-      prevState: Readonly<{}>
-    ): any
-    componentDidUpdate?(
-      prevProps: Readonly<{}>,
-      prevState: Readonly<{}>,
-      snapshot?: any
-    ): void
-    componentWillMount?(): void
-    UNSAFE_componentWillMount?(): void
-    componentWillReceiveProps?(nextProps: Readonly<{}>, nextContext: any): void
-    UNSAFE_componentWillReceiveProps?(
-      nextProps: Readonly<{}>,
-      nextContext: any
-    ): void
-    componentWillUpdate?(
-      nextProps: Readonly<{}>,
-      nextState: Readonly<{}>,
-      nextContext: any
-    ): void
-    UNSAFE_componentWillUpdate?(
-      nextProps: Readonly<{}>,
-      nextState: Readonly<{}>,
-      nextContext: any
-    ): void
-  }
-  new (props: {}, context: any): {
-    componentDidMount(): void
-    render(): JSX.Element
-    context: any
-    setState<K extends never>(
-      state:
-        | {}
-        | ((prevState: Readonly<{}>, props: Readonly<{}>) => {} | Pick<{}, K>)
-        | Pick<{}, K>,
-      callback?: () => void
-    ): void
-    forceUpdate(callback?: () => void): void
-    readonly props: Readonly<{}> &
-      Readonly<{
-        children?: React.ReactNode
-      }>
-    state: Readonly<{}>
-    refs: {
-      [key: string]: React.ReactInstance
-    }
-    shouldComponentUpdate?(
-      nextProps: Readonly<{}>,
-      nextState: Readonly<{}>,
-      nextContext: any
-    ): boolean
-    componentWillUnmount?(): void
-    componentDidCatch?(error: Error, errorInfo: React.ErrorInfo): void
-    getSnapshotBeforeUpdate?(
-      prevProps: Readonly<{}>,
-      prevState: Readonly<{}>
-    ): any
-    componentDidUpdate?(
-      prevProps: Readonly<{}>,
-      prevState: Readonly<{}>,
-      snapshot?: any
-    ): void
-    componentWillMount?(): void
-    UNSAFE_componentWillMount?(): void
-    componentWillReceiveProps?(nextProps: Readonly<{}>, nextContext: any): void
-    UNSAFE_componentWillReceiveProps?(
-      nextProps: Readonly<{}>,
-      nextContext: any
-    ): void
-    componentWillUpdate?(
-      nextProps: Readonly<{}>,
-      nextState: Readonly<{}>,
-      nextContext: any
-    ): void
-    UNSAFE_componentWillUpdate?(
-      nextProps: Readonly<{}>,
-      nextState: Readonly<{}>,
-      nextContext: any
-    ): void
-  }
-  getInitialProps({ res, query }: { res: any; query: any }): Promise<{}>
-  contextType?: React.Context<any>
-}
-export default _default
+declare const _default: (redirectUrl: string, options?: {
+	asUrl?: string;
+	statusCode?: number;
+	params?: boolean;
+}) => {
+	new (props: {} | Readonly<{}>): {
+		componentDidMount(): void;
+		render(): JSX.Element;
+		context: any;
+		setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<{}>) => {} | Pick<{}, K>) | Pick<{}, K>, callback?: () => void): void;
+		forceUpdate(callback?: () => void): void;
+		readonly props: Readonly<{}> & Readonly<{
+			children?: React.ReactNode;
+		}>;
+		state: Readonly<{}>;
+		refs: {
+			[key: string]: React.ReactInstance;
+		};
+		shouldComponentUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): boolean;
+		componentWillUnmount?(): void;
+		componentDidCatch?(error: Error, errorInfo: React.ErrorInfo): void;
+		getSnapshotBeforeUpdate?(prevProps: Readonly<{}>, prevState: Readonly<{}>): any;
+		componentDidUpdate?(prevProps: Readonly<{}>, prevState: Readonly<{}>, snapshot?: any): void;
+		componentWillMount?(): void;
+		UNSAFE_componentWillMount?(): void;
+		componentWillReceiveProps?(nextProps: Readonly<{}>, nextContext: any): void;
+		UNSAFE_componentWillReceiveProps?(nextProps: Readonly<{}>, nextContext: any): void;
+		componentWillUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): void;
+		UNSAFE_componentWillUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): void;
+	};
+	new (props: {}, context: any): {
+		componentDidMount(): void;
+		render(): JSX.Element;
+		context: any;
+		setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<{}>) => {} | Pick<{}, K>) | Pick<{}, K>, callback?: () => void): void;
+		forceUpdate(callback?: () => void): void;
+		readonly props: Readonly<{}> & Readonly<{
+			children?: React.ReactNode;
+		}>;
+		state: Readonly<{}>;
+		refs: {
+			[key: string]: React.ReactInstance;
+		};
+		shouldComponentUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): boolean;
+		componentWillUnmount?(): void;
+		componentDidCatch?(error: Error, errorInfo: React.ErrorInfo): void;
+		getSnapshotBeforeUpdate?(prevProps: Readonly<{}>, prevState: Readonly<{}>): any;
+		componentDidUpdate?(prevProps: Readonly<{}>, prevState: Readonly<{}>, snapshot?: any): void;
+		componentWillMount?(): void;
+		UNSAFE_componentWillMount?(): void;
+		componentWillReceiveProps?(nextProps: Readonly<{}>, nextContext: any): void;
+		UNSAFE_componentWillReceiveProps?(nextProps: Readonly<{}>, nextContext: any): void;
+		componentWillUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): void;
+		UNSAFE_componentWillUpdate?(nextProps: Readonly<{}>, nextState: Readonly<{}>, nextContext: any): void;
+	};
+	getInitialProps({ res, query }: {
+		res: any;
+		query: any;
+	}): Promise<{}>;
+	contextType?: React.Context<any>;
+};
+export default _default;
 
-export {}
+export {};

@@ -2,6 +2,23 @@ import React from 'react'
 import Router from 'next/router'
 import Head from 'next/head'
 
+const PARAMS_ERROR = "Option {params: true} require the url to be the name of the param to search for: `redirect('to', {params:true})` will work with `/redirect?to=https://example.com`"
+
+const getParamFromClient = (paramName: string) => {
+  if (typeof window === 'undefined') {
+    return ''
+  }
+
+  const url = new URL(window.location.href)
+  const paramValue = url.searchParams.get(paramName)
+
+  if (!paramValue) {
+    throw new Error(PARAMS_ERROR)
+  }
+
+  return paramValue
+}
+
 export default (
   redirectUrl: string,
   options?: { asUrl?: string; statusCode?: number; params?: boolean }
@@ -9,15 +26,14 @@ export default (
   class extends React.Component {
     // Redirects on the server side first if possible
     static async getInitialProps({ res, query }) {
+      return {}
       if (res?.writeHead) {
         let url = redirectUrl
 
         if (options?.params === true) {
           const param = redirectUrl
           if (!query[param]) {
-            throw new Error(
-              "Option {params: true} require the url to be the name of the param to search for: `redirect('to', {params:true})` will work with `/redirect?to=https://example.com`"
-            )
+            throw new Error(PARAMS_ERROR)
           }
           url = query[param]
         }
@@ -29,7 +45,9 @@ export default (
 
     // Redirects on the client with JavaScript if no server
     componentDidMount() {
-      if (options?.asUrl != null) {
+      if (options?.params === true) {
+        window.location.href = getParamFromClient(redirectUrl)
+      } else if (options?.asUrl != null) {
         Router.push(redirectUrl, options.asUrl, { shallow: true })
       } else if (redirectUrl[0] === '/') {
         Router.push(redirectUrl)
@@ -39,7 +57,11 @@ export default (
     }
 
     render() {
-      const href = options?.asUrl ?? redirectUrl
+      let href = options?.asUrl ?? redirectUrl
+
+      if (options?.params != null) {
+        href = getParamFromClient(redirectUrl)
+      }
 
       return (
         <>
