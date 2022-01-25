@@ -26,7 +26,6 @@ export default (
   class extends React.Component {
     // Redirects on the server side first if possible
     static async getInitialProps({ res, query }) {
-      return {}
       if (res?.writeHead) {
         let url = redirectUrl
 

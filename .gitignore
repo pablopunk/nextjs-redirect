@@ -5,3 +5,4 @@ coverage*
 dist/
 yarn.lock
 cypress/videos
+cypress/screenshots
