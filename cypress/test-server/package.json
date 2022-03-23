@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && next start",
+    "start": "npm run build && next start -p 8123",
     "build": "next build"
   },
   "author": "",

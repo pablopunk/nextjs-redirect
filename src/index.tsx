@@ -2,7 +2,8 @@ import React from 'react'
 import Router from 'next/router'
 import Head from 'next/head'
 
-const PARAMS_ERROR = "Option {params: true} require the url to be the name of the param to search for: `redirect('to', {params:true})` will work with `/redirect?to=https://example.com`"
+const PARAMS_ERROR =
+  "Option {params: true} require the url to be the name of the param to search for: `redirect('to', {params:true})` will work with `/redirect?to=https://example.com`"
 
 const getParamFromClient = (paramName: string) => {
   if (typeof window === 'undefined') {
@@ -36,9 +37,15 @@ export default (
           }
           url = query[param]
         }
+
         res.writeHead(options?.statusCode ?? 301, { Location: url })
         res.end()
+      } else if (options?.asUrl) {
+        Router.push(redirectUrl, options.asUrl, { shallow: true })
+      } else {
+        Router.push(redirectUrl)
       }
+
       return {}
     }
 
