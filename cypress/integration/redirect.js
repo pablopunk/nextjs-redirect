@@ -24,4 +24,14 @@ describe('nextjs-redirect', () => {
       expect(response.redirects[0]).to.include('302:')
     })
   })
+  it('redirects in the client', () => {
+    const urlRedirects = []
+
+    cy.on('url:changed', (url) => urlRedirects.push(url))
+    cy.visit('/client')
+    cy.then(() => {
+      expect(urlRedirects).to.have.length(2)
+      expect(urlRedirects[1]).to.include('pablopunk.com')
+    })
+  })
 })
