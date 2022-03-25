@@ -1,8 +1,5 @@
 {
   "baseUrl": "http://localhost:8123",
   "chromeWebSecurity": false,
-  "retries": {
-    "runMode": 3,
-    "openMode": 0
-  }
+  "retries": 3
 }

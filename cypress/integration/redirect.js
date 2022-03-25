@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('nextjs-redirect', () => {
   it('redirects to google', () => {
     const urlRedirects = []
@@ -32,6 +34,18 @@ describe('nextjs-redirect', () => {
     cy.then(() => {
       expect(urlRedirects).to.have.length(2)
       expect(urlRedirects[1]).to.include('pablopunk.com')
+    })
+  })
+  it('redirects with next/link', () => {
+    const urlRedirects = []
+
+    cy.on('url:changed', (url) => urlRedirects.push(url))
+    cy.visit('/')
+    cy.contains('Redirect to Google').click()
+    cy.then(() => {
+      expect(urlRedirects).to.have.length(3)
+      expect(urlRedirects[1]).to.include('/google')
+      expect(urlRedirects[2]).to.include('google.com')
     })
   })
 })

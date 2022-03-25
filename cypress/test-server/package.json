@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && next start -p 8123",
-    "build": "next build"
+    "build": "next build",
+    "dev": "next -p 8123"
   },
   "author": "",
   "license": "ISC",
