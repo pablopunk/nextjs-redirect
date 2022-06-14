@@ -1,0 +1,16 @@
+name: Static export
+
+on: [push, pull_request]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+
+      - name: npm install
+        uses: bahmutov/npm-install@v1
+
+      - name: Run tests 🧪
+        run: npm run test:static-export

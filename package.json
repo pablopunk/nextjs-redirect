@@ -22,6 +22,7 @@
     "dts-bundle-generator": "^4.3.0",
     "husky": "*",
     "next": "*",
+    "nodemon": "^2.0.16",
     "prettier": "*",
     "pretty-quick": "*",
     "react": "*",
@@ -58,14 +59,16 @@
   },
   "scripts": {
     "build": "sucrase src -d dist --transforms imports,typescript,jsx && npm run generate-types",
+    "dev": "nodemon --watch src/* --exec 'npm run build'",
     "generate-types": "dts-bundle-generator -o typings.d.ts src/index.tsx",
     "prepare": "npm run build",
     "cypress": "cypress open",
     "cypress:ci": "cypress run",
     "start-test-server": "npm run build && cd cypress/test-server && npm start",
-    "start-test-server-dev": "npm run build && cd cypress/test-server && npm run dev",
+    "start-test-server-dev": "cd cypress/test-server && npm run dev",
     "test:dev": "start-server-and-test start-test-server-dev http://localhost:8123 cypress",
-    "test:ci": "start-server-and-test start-test-server http://localhost:8123 cypress:ci"
+    "test:ci": "start-server-and-test start-test-server http://localhost:8123 cypress:ci",
+    "test:static-export": "cd cypress/test-server && npm i && npm run build && npx next export"
   },
   "main": "./dist/index.js",
   "types": "./typings.d.ts",

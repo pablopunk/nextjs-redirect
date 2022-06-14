@@ -32,18 +32,20 @@ export default (
 
         if (options?.params === true) {
           const param = redirectUrl
-          if (!query[param]) {
+          if (!query?.[param]) {
             throw new Error(PARAMS_ERROR)
           }
           url = query[param]
         }
-
         res.writeHead(options?.statusCode ?? 301, { Location: url })
         res.end()
-      } else if (options?.asUrl) {
-        Router.push(redirectUrl, options.asUrl, { shallow: true })
-      } else {
-        Router.push(redirectUrl)
+      } else if (typeof window !== 'undefined') {
+        let url = redirectUrl
+
+        if (options?.params === true) {
+          url = getParamFromClient(url)
+        }
+        window.location.href = url
       }
 
       return {}

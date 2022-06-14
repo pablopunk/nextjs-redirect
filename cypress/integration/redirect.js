@@ -2,14 +2,8 @@
 
 describe('nextjs-redirect', () => {
   it('redirects to google', () => {
-    const urlRedirects = []
-
-    cy.on('url:changed', (url) => urlRedirects.push(url))
     cy.visit('/google')
-    cy.then(() => {
-      expect(urlRedirects).to.have.length(1)
-      expect(urlRedirects[0]).to.include('google.com')
-    })
+    cy.url().should('include', 'google.com')
   })
   it('redirects with status 301 by default', () => {
     cy.request('/google').then((response) => {
@@ -27,25 +21,12 @@ describe('nextjs-redirect', () => {
     })
   })
   it('redirects in the client', () => {
-    const urlRedirects = []
-
-    cy.on('url:changed', (url) => urlRedirects.push(url))
     cy.visit('/client')
-    cy.then(() => {
-      expect(urlRedirects).to.have.length(2)
-      expect(urlRedirects[1]).to.include('pablopunk.com')
-    })
+    cy.url().should('include', 'pablopunk.com')
   })
   it('redirects with next/link', () => {
-    const urlRedirects = []
-
-    cy.on('url:changed', (url) => urlRedirects.push(url))
     cy.visit('/')
     cy.contains('Redirect to Google').click()
-    cy.then(() => {
-      expect(urlRedirects).to.have.length(3)
-      expect(urlRedirects[1]).to.include('/google')
-      expect(urlRedirects[2]).to.include('google.com')
-    })
+    cy.url().should('include', 'google.com')
   })
 })
