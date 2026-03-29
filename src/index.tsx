@@ -24,7 +24,7 @@ export default (
   redirectUrl: string,
   options?: { asUrl?: string; statusCode?: number; params?: boolean }
 ) =>
-  class extends React.Component {
+  class extends React.Component<React.PropsWithChildren> {
     // Redirects on the server side first if possible
     static async getInitialProps({ res, query }) {
       if (res?.writeHead) {
