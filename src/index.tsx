@@ -67,8 +67,12 @@ export default (
     render() {
       let href = options?.asUrl ?? redirectUrl
 
-      if (options?.params != null) {
-        href = getParamFromClient(redirectUrl)
+      if (options?.params === true && typeof window !== 'undefined') {
+        try {
+          href = getParamFromClient(redirectUrl)
+        } catch {
+          // Keep the fallback href when the query parameter is unavailable during render.
+        }
       }
 
       return (
